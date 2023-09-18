@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/characterSprites/selectIcon.png" type="Texture" id=1]
+
+[node name="SelectIcon" type="Sprite"]
+scale = Vector2( 1.2, 1.15 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 7
+vframes = 7

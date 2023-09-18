@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/battletheme-Adventureahead-v2.mp3-0b8709baf021efc7bfdf44f5830dbb1a.mp3str"
+
+[deps]
+
+source_file="res://assets/music/battletheme-Adventureahead-v2.mp3"
+dest_files=[ "res://.import/battletheme-Adventureahead-v2.mp3-0b8709baf021efc7bfdf44f5830dbb1a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

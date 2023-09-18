@@ -1,0 +1,275 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://assets/particles/1192.png" type="Texture" id=1]
+[ext_resource path="res://assets/title/titleBG.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/Verdana.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/title/ref2.png" type="Texture" id=4]
+[ext_resource path="res://assets/title/titleChar.png" type="Texture" id=5]
+[ext_resource path="res://assets/title/FW.png" type="Texture" id=6]
+[ext_resource path="res://scripts/TitleScreenLogic.gd" type="Script" id=7]
+[ext_resource path="res://scenes/Loading.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/music/Titlescreentheme-Onefortheroaddraft1.mp3" type="AudioStream" id=9]
+[ext_resource path="res://assets/title/vita.png" type="Texture" id=10]
+[ext_resource path="res://assets/title/glow.png" type="Texture" id=11]
+[ext_resource path="res://scenes/Credits.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.568182, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.196078 )
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "appear"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 479, 850 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "up"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 479, 850 ), Vector2( 479, 344 ) ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 480, 143 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "appear"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1200, 133 ), Vector2( 480, 133 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "appear"
+length = 2.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -479, 68 ), Vector2( 479, 68 ) ]
+}
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Ref2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 479.999, 272 )
+scale = Vector2( 1.12544, 1.13333 )
+texture = ExtResource( 4 )
+
+[node name="BattleBG" type="Sprite" parent="."]
+position = Vector2( 480, 272 )
+scale = Vector2( 1.2, 1.13333 )
+texture = ExtResource( 2 )
+
+[node name="BGParticles" type="CPUParticles2D" parent="."]
+position = Vector2( 480, 544 )
+rotation = -1.5708
+scale = Vector2( 0.55, 0.55 )
+emitting = false
+amount = 24
+lifetime = 6.0
+speed_scale = 1.5
+randomness = 0.5
+texture = ExtResource( 1 )
+spread = 90.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 180.0
+angle_random = 1.0
+color_ramp = SubResource( 1 )
+
+[node name="Glow" type="Sprite" parent="."]
+position = Vector2( 480, 543 )
+scale = Vector2( 4.4, 4.4 )
+texture = ExtResource( 11 )
+
+[node name="AppearAnim" type="AnimationPlayer" parent="Glow"]
+anims/RESET = SubResource( 13 )
+anims/appear = SubResource( 14 )
+
+[node name="TitleChar" type="Sprite" parent="."]
+position = Vector2( 479, 850 )
+scale = Vector2( 1.2, 1.15 )
+texture = ExtResource( 5 )
+
+[node name="UpAnim" type="AnimationPlayer" parent="TitleChar"]
+playback_speed = 0.45
+anims/RESET = SubResource( 5 )
+anims/up = SubResource( 6 )
+
+[node name="Copyright" type="Label" parent="."]
+margin_left = 757.0
+margin_top = 507.0
+margin_right = 958.0
+margin_bottom = 542.0
+custom_fonts/font = SubResource( 2 )
+text = "Copyright © 2016 Scott Cawthon
+Godot Port by MafuRick"
+
+[node name="Vita" type="Sprite" parent="."]
+visible = false
+position = Vector2( 480, 143 )
+texture = ExtResource( 10 )
+
+[node name="AppearAnim" type="AnimationPlayer" parent="Vita"]
+anims/RESET = SubResource( 11 )
+anims/appear = SubResource( 12 )
+
+[node name="Fw" type="Sprite" parent="."]
+position = Vector2( -479, 68 )
+scale = Vector2( 1.2, 1.15 )
+texture = ExtResource( 6 )
+vframes = 3
+frame = 1
+
+[node name="IdleAnim" type="AnimationPlayer" parent="Fw"]
+playback_speed = 5.0
+anims/RESET = SubResource( 3 )
+anims/idle = SubResource( 4 )
+
+[node name="AppearAnim" type="AnimationPlayer" parent="Fw"]
+anims/appear = SubResource( 10 )
+
+[node name="Loading" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="LoadTimer" type="Timer" parent="Loading"]
+
+[node name="Credits" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="SFX"]
+position = Vector2( 480, 272 )
+stream = ExtResource( 9 )
+volume_db = 3.0
+
+[connection signal="animation_finished" from="Fw/AppearAnim" to="." method="_on_AppearAnim_animation_finished"]
+[connection signal="timeout" from="Loading/LoadTimer" to="." method="_on_LoadTimer_timeout"]
