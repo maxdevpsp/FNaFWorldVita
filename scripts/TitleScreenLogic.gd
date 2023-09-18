@@ -1,7 +1,6 @@
 extends Node2D
 
 func _ready():
-	$Vita.visible = true
 	$SFX/MenuMusic.play() # Play menu music
 	
 	$Glow/AppearAnim.play("appear")
@@ -9,6 +8,7 @@ func _ready():
 	# Play logo animations
 	$Fw/IdleAnim.play("idle")
 	$Fw/AppearAnim.play("appear")
+	$Vita.visible = true
 	$Vita/AppearAnim.play("appear")
 	
 	# Play title characters animation
