@@ -21,7 +21,7 @@ func _process(delta):
 		get_node("Loading/LoadTimer").start()
 		
 	if Input.is_action_pressed("ui_select"):
-		# Showing the loading screen
+		# Showing the credits screen
 		get_node("Credits").visible = true
 		
 	if Input.is_action_pressed("ui_cancel") and get_node("Credits").visible == true:
