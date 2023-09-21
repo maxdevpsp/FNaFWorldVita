@@ -2,7 +2,8 @@
 
 [ext_resource path="res://assets/gui/selectionSlots/a2.png" type="Texture" id=1]
 
-[node name="A1" type="Node2D"]
+[node name="A2" type="Node2D"]
 
 [node name="Texture" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+centered = false

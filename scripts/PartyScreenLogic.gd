@@ -45,3 +45,15 @@ func _ready():
 		
 		#print(curIcon.get_name())
 		yield(get_tree().create_timer(0.015), "timeout") # A little wait time between icons
+		
+	for a in range(8):
+		print("work")
+		var curSelSlot = load("res://scenes/gui/partySlots/" + str(a + 1) +".tscn").instance()
+		
+		get_node("SelIcons").add_child(curSelSlot)
+		
+		# Some tweaking
+		curSelSlot.set_name(str(a)) # Name
+		curSelSlot.set_scale(Vector2(1.2, 1.125)) # Scale
+		curSelSlot.set_position(get_node("Icons/" + str(partyData[a] - 1)).get_position()) # Position
+		print(str(get_node("Icons/" + str(partyData[a])).get_position()))
