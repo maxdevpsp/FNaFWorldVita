@@ -5,6 +5,8 @@ func _ready():
 	
 	$Glow/AppearAnim.play("appear")
 	
+	$ColorRect/FadeIn.play("fadeIn")
+	
 	# Play logo animations
 	$Fw/IdleAnim.play("idle")
 	$Fw/AppearAnim.play("appear")

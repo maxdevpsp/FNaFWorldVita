@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/particles/1192.png" type="Texture" id=1]
 [ext_resource path="res://assets/title/titleBG.png" type="Texture" id=2]
@@ -58,6 +58,37 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "fadeIn"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -212,6 +243,15 @@ texture = ExtResource( 11 )
 [node name="AppearAnim" type="AnimationPlayer" parent="Glow"]
 anims/RESET = SubResource( 13 )
 anims/appear = SubResource( 14 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 960.0
+margin_bottom = 544.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="FadeIn" type="AnimationPlayer" parent="ColorRect"]
+anims/RESET = SubResource( 15 )
+anims/fadeIn = SubResource( 16 )
 
 [node name="TitleChar" type="Sprite" parent="."]
 position = Vector2( 479, 850 )
