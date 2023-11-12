@@ -5,7 +5,7 @@ func _ready():
 	
 	$Glow/AppearAnim.play("appear")
 	
-	$ColorRect/FadeIn.play("fadeIn")
+	$BackFade/FadeIn.play("fadeIn")
 	
 	# Play logo animations
 	$Fw/IdleAnim.play("idle")
@@ -40,4 +40,5 @@ func _on_AppearAnim_animation_finished(anim_name): # When the logo animation is 
 
 func _on_LoadTimer_timeout(): # When everything is loaded up
 	# Switch to another scene
-	get_tree().change_scene("res://scenes/Fight.tscn")
+	#get_tree().change_scene("res://scenes/Fight.tscn")
+	get_tree().change_scene("res://scenes/overworld/FazbearHills.tscn")

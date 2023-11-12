@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/particles/1192.png" type="Texture" id=1]
 [ext_resource path="res://assets/title/titleBG.png" type="Texture" id=2]
-[ext_resource path="res://assets/fonts/Verdana.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/Segoe UI Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/title/ref2.png" type="Texture" id=4]
 [ext_resource path="res://assets/title/titleChar.png" type="Texture" id=5]
 [ext_resource path="res://assets/title/FW.png" type="Texture" id=6]
@@ -244,12 +244,12 @@ texture = ExtResource( 11 )
 anims/RESET = SubResource( 13 )
 anims/appear = SubResource( 14 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BackFade" type="ColorRect" parent="."]
 margin_right = 960.0
 margin_bottom = 544.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="FadeIn" type="AnimationPlayer" parent="ColorRect"]
+[node name="FadeIn" type="AnimationPlayer" parent="BackFade"]
 anims/RESET = SubResource( 15 )
 anims/fadeIn = SubResource( 16 )
 

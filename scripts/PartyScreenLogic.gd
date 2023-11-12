@@ -47,7 +47,6 @@ func _ready():
 		yield(get_tree().create_timer(0.015), "timeout") # A little wait time between icons
 		
 	for a in range(8):
-		print("work")
 		var curSelSlot = load("res://scenes/gui/partySlots/" + str(a + 1) +".tscn").instance()
 		
 		get_node("SelIcons").add_child(curSelSlot)

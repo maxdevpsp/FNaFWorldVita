@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="FNaFWorldReplica"
+config/name="FNaF World Vita"
 run/main_scene="res://scenes/FakeWarningTransition.tscn"
 boot_splash/image="res://assets/gui/warningScreen.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
@@ -21,6 +21,10 @@ config/icon="res://icon.png"
 window/size/width=960
 window/size/height=544
 window/size/resizable=false
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/codeandweb.texturepacker/plugin.cfg" )
 
 [gui]
 

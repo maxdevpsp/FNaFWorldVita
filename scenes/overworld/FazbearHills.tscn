@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/overworld/mapGround.res" type="TileSet" id=1]
+[ext_resource path="res://scenes/overworld/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/overworld/CameraLogic.gd" type="Script" id=3]
+[ext_resource path="res://scenes/overworld/MapLogic.gd" type="Script" id=4]
+[ext_resource path="res://assets/overworld/mapObj.res" type="TileSet" id=5]
+[ext_resource path="res://scenes/Loading.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/overworld/ref5.png" type="Texture" id=7]
+[ext_resource path="res://assets/overworld/mapBuild.res" type="TileSet" id=8]
+[ext_resource path="res://assets/gui/overlays/sunlight.png" type="Texture" id=9]
+[ext_resource path="res://scenes/overworld/OverworldGUI.tscn" type="PackedScene" id=10]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[node name="FazbearHillsMap" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Ref5" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.470588 )
+position = Vector2( 480, 272 )
+texture = ExtResource( 7 )
+
+[node name="MapGround" type="TileMap" parent="."]
+position = Vector2( -320, -152 )
+scale = Vector2( 1.35, 1.25 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 300, 150 )
+cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+cell_tile_origin = 1
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, 65535, 4, 0, 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 131071, 4, 0, 65536, 4, 0, 65537, 4, 0, 65538, 4, 0, 65539, 4, 0, 196607, 4, 0, 131072, 4, 0, 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 262143, 4, 0, 196608, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 327679, 4, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 524289, 6, 0 )
+
+[node name="MapObj" type="TileMap" parent="."]
+position = Vector2( -75, -65 )
+scale = Vector2( 1.35, 1.25 )
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 48, 48 )
+cell_custom_transform = Transform2D( 48, 0, 0, 64, 0, 0 )
+cell_tile_origin = 1
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( -65532, 5, 0, -65530, 5, 0, -65529, 5, 0, -65528, 5, 0, -65527, 5, 0, 1, 5, 0, 2, 5, 0, 5, 16, 0, 9, 5, 0, 10, 5, 0, 11, 5, 0, 12, 5, 0, 65536, 5, 0, 65537, 5, 0, 65541, 5, 0, 65546, 5, 0, 65547, 5, 0, 65548, 5, 0, 131074, 5, 0, 131075, 5, 0, 131078, 5, 0, 131083, 5, 0, 131084, 5, 0, 131085, 5, 0, 196609, 5, 0, 196610, 5, 0, 196611, 5, 0, 196614, 16, 0, 196619, 16, 0, 196620, 5, 0, 196621, 5, 0, 262144, 5, 0, 262145, 5, 0, 262146, 5, 0, 262147, 5, 0, 262148, 5, 0, 262153, 5, 0, 262156, 5, 0, 262157, 5, 0, 262158, 5, 0, 327680, 5, 0, 327681, 5, 0, 327682, 5, 0, 327683, 5, 0, 327692, 16, 0, 327693, 5, 0, 327694, 5, 0, 393216, 5, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393222, 5, 0, 393226, 5, 0, 393229, 5, 0, 524287, 5, 0, 458753, 5, 0, 458754, 5, 0, 458755, 5, 0, 458756, 5, 0, 458757, 5, 0, 458760, 5, 0, 458767, 5, 0, 458768, 5, 0, 524289, 6, 0, 524290, 5, 0, 524291, 5, 0, 524292, 5, 0, 524293, 5, 0, 524294, 5, 0, 524295, 5, 0, 524296, 5, 0, 524297, 5, 0, 524299, 5, 0, 524303, 5, 0, 524304, 5, 0, 589826, 5, 0, 589827, 5, 0, 589828, 5, 0, 589829, 5, 0, 589830, 5, 0, 589831, 5, 0, 589832, 5, 0, 589833, 5, 0, 589834, 5, 0, 589835, 5, 0, 589836, 5, 0, 589838, 6, 0, 589839, 5, 0, 589840, 5, 0, 655366, 5, 0, 655367, 5, 0, 655368, 5, 0, 655369, 5, 0, 655370, 5, 0, 655371, 5, 0, 655374, 5, 0, 655375, 5, 0, 655377, 5, 0, 720906, 5, 0, 720907, 5, 0, 720910, 5, 0, 720911, 5, 0, 786446, 5, 0, 786447, 5, 0 )
+
+[node name="OtherObj" type="Node2D" parent="."]
+
+[node name="MapBuild" type="TileMap" parent="."]
+position = Vector2( -75, -65 )
+scale = Vector2( 1.35, 1.25 )
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 48, 48 )
+cell_custom_transform = Transform2D( 48, 0, 0, 64, 0, 0 )
+cell_tile_origin = 1
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( 7, 2, 0, 524289, 6, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 480, 272 )
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 3 )
+
+[node name="Sunlight" type="Sprite" parent="Camera"]
+material = SubResource( 1 )
+scale = Vector2( 1.2, 1.15 )
+texture = ExtResource( 9 )
+
+[node name="Loading" parent="Camera" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( -480, -272 )
+
+[node name="LoadTimer" type="Timer" parent="Camera/Loading"]
+
+[node name="OverworldGUI" parent="Camera" instance=ExtResource( 10 )]
+position = Vector2( -480, -272 )
+
+[node name="Encounter" type="Timer" parent="."]
+
+[connection signal="timeout" from="Camera/Loading/LoadTimer" to="." method="_on_LoadTimer_timeout"]
+[connection signal="timeout" from="Encounter" to="." method="_on_Encounter_timeout"]

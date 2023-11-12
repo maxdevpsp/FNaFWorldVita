@@ -1,5 +1,8 @@
 # Big Chungus
 .import/*
 saves/*
+assets/overworld/mapBuild.sprites/
+assets/overworld/mapGround.sprites/
+assets/overworld/mapObj.sprites/
 *.vpk
 *.import

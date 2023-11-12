@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/overworld/mapObj.res" type="TileSet" id=1]
+[ext_resource path="res://scenes/overworld/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/overworld/CameraLogic.gd" type="Script" id=3]
+[ext_resource path="res://assets/overworld/collisionStuff.png" type="Texture" id=4]
+[ext_resource path="res://scenes/overworld/MapLogic.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Loading.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/overworld/ref5.png" type="Texture" id=7]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 48, 48, 0, 48, 0, 0, 48, 0 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "collisionStuff.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 48, 48 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="TestMap" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Ref5" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.470588 )
+position = Vector2( 350, 286 )
+texture = ExtResource( 7 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 1.2, 1.15 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 48, 48 )
+cell_custom_transform = Transform2D( 48, 0, 0, 64, 0, 0 )
+cell_tile_origin = 1
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( 65535, 15, 0, 0, 15, 0, 1, 15, 0, 2, 15, 0, 3, 15, 0, 4, 15, 0, 5, 15, 0, 6, 15, 0, 7, 15, 0, 8, 15, 0, 9, 15, 0, 10, 15, 0, 11, 15, 0, 12, 15, 0, 13, 15, 0, 14, 15, 0, 15, 15, 0, 16, 15, 0, 17, 15, 0, 18, 15, 0, 19, 15, 0, 131071, 15, 0, 65536, 15, 0, 65537, 15, 0, 65538, 15, 0, 65539, 15, 0, 65540, 15, 0, 65541, 15, 0, 65542, 15, 0, 65550, 15, 0, 65551, 15, 0, 65552, 15, 0, 65553, 15, 0, 65554, 15, 0, 65555, 15, 0, 196607, 15, 0, 131072, 15, 0, 131073, 15, 0, 131077, 10, 0, 131082, 10, 0, 131083, 4, 0, 131086, 15, 0, 131087, 15, 0, 131088, 15, 0, 131089, 15, 0, 131090, 15, 0, 131091, 15, 0, 262143, 15, 0, 196608, 15, 0, 196623, 15, 0, 196624, 15, 0, 196625, 15, 0, 196626, 15, 0, 196627, 15, 0, 327679, 15, 0, 262144, 15, 0, 262152, 21, 0, 262160, 15, 0, 262161, 15, 0, 262162, 15, 0, 262163, 15, 0, 393215, 15, 0, 327680, 15, 0, 327697, 15, 0, 327698, 15, 0, 327699, 15, 0, 458751, 15, 0, 393216, 15, 0, 393217, 15, 0, 393230, 15, 0, 393231, 15, 0, 393232, 15, 0, 393233, 15, 0, 393234, 15, 0, 393235, 15, 0, 524287, 15, 0, 458752, 15, 0, 458753, 15, 0, 458754, 15, 0, 458755, 15, 0, 458756, 15, 0, 458757, 15, 0, 458758, 15, 0, 458759, 15, 0, 458766, 15, 0, 458767, 15, 0, 458768, 15, 0, 458769, 15, 0, 458770, 15, 0, 458771, 15, 0, 589823, 15, 0, 524288, 15, 0, 524289, 15, 0, 524290, 15, 0, 524291, 15, 0, 524292, 15, 0, 524293, 15, 0, 524294, 15, 0, 524295, 15, 0, 524296, 15, 0, 524297, 15, 0, 524298, 15, 0, 524299, 15, 0, 524300, 15, 0, 524301, 15, 0, 524302, 15, 0, 524303, 15, 0, 524304, 15, 0, 524305, 15, 0, 524306, 15, 0, 524307, 15, 0, 655359, 15, 0, 589824, 15, 0, 589825, 15, 0, 589826, 15, 0, 589827, 15, 0, 589828, 15, 0, 589829, 15, 0, 589830, 15, 0, 589831, 15, 0, 589832, 15, 0, 589833, 15, 0, 589834, 15, 0, 589835, 15, 0, 589836, 15, 0, 589837, 15, 0, 589838, 15, 0, 589839, 15, 0, 589840, 15, 0, 589841, 15, 0, 589842, 15, 0, 589843, 15, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 352, 285 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 352, 285 )
+current = true
+script = ExtResource( 3 )
+
+[node name="Loading" parent="Camera" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( -480, -272 )
+
+[node name="LoadTimer" type="Timer" parent="Camera/Loading"]
+
+[node name="Collision" type="TileMap" parent="."]
+scale = Vector2( 1.2, 1.15 )
+tile_set = SubResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_custom_transform = Transform2D( 48, 0, 0, 64, 0, 0 )
+cell_tile_origin = 1
+format = 1
+
+[node name="Encounter" type="Timer" parent="."]
+
+[connection signal="timeout" from="Camera/Loading/LoadTimer" to="." method="_on_LoadTimer_timeout"]
+[connection signal="timeout" from="Encounter" to="." method="_on_Encounter_timeout"]
